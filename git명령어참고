@@ -1,0 +1,25 @@
+PWD  //현재위치
+
+mkdir git_test //저장소 위치 생성
+
+cd git_test //저장소 위치로 이동
+
+git init //git 저장소 생성
+
+vi readme.md //readme 파일 생성  
+
+i 입력시 // 문자열 입력 가능
+
+Esc 입력후 :wq //저장후 나가기
+
+git remote add origin 내저장소위치 //원격저장소 연결
+
+git add . //모든파일 추가
+
+git commit -m '커밋에 대한 메세지' // 커밋
+
+git branch -M main //브랜치 생성
+
+git push origin main //푸쉬
+
+
