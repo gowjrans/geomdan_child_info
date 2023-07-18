@@ -22,4 +22,6 @@ git branch -M main //브랜치 생성
 
 git push origin main //푸쉬
 
+$ git branch --set-upstream-to=origin/main //main branch 연동
+
 
