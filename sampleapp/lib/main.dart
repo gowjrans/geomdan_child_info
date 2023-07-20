@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restart_app/restart_app.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(const BottomNavigationBarApp());
@@ -120,7 +121,7 @@ class ProgressListBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -184,6 +185,7 @@ class MyInfoBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> entries = <String>['알림 리스트', '선호하는 집 조건', '고객센터', '계정관리', '로그아웃'];
     return Scaffold(
       body: Column(
         children: [
@@ -225,24 +227,29 @@ class MyInfoBody extends StatelessWidget {
                 ),
               ],
             ),
-          ),Container(width: double.infinity, height: 10, color: Color(0XFFF2F2F2),),
+          ),Container(width: double.infinity, height: 10, color: const Color(0XFFF2F2F2),),
+          Expanded(child:
+            ListView.separated(
+              itemCount: entries.length,
+              itemBuilder: (BuildContext context, int index) {
+                return GestureDetector(
+                  onTap: (){
+                    if(index == entries.length-1) {
+
+                    }
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    child: Text(entries[index], style:const TextStyle(fontSize: 20),),
+                  ),
+                );
+              },
+              separatorBuilder: (BuildContext context, int index) => const Divider(),
+            )
+          ),
         ],
       ),
     );
-  }
-}
-
-Widget getListItem(String title, bool logout){
-  if(logout) {
-    return Row(
-      children: [
-        Text(title),
-        Expanded(child: Container(),),
-        Icon(Icons.chevron_right),
-      ],
-    );
-  } else {
-    return Text(title);
   }
 }
 
