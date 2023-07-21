@@ -1,0 +1,9 @@
+Container 디자인
+
+borderRadius: BorderRadius.circular(20) 콘테이너 외각의 구분선 주기
+
+border: Border.all(color: Colors.red, width: 5, style: BorderStyle.solid) 외각선 주기
+boxShadow: [ //박스 그림자주기 withOpacity는 투명도, Ofsset의 x,y의 위치, blurRadius는 블러 처리, spreadRadius 그림자 넓이
+  BoxShadow(color: Colors.black.withOpacity(0.3), offset: Offset(10,10), blurRadius: 10, spreadRadius: 10),
+  BoxShadow(color: Colors.blue.withOpacity(0.3), offset: Offset(-6,-6), blurRadius: 10, spreadRadius: 10),
+]
